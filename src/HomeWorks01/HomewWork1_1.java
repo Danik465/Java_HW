@@ -19,6 +19,7 @@ public class HomewWork1_1 {
 //        mn.task12();
 
     }
+
     public void task1(){
         //1.Вычислить n-ое треугольного число (сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
         System.out.println("Введите число n:");
