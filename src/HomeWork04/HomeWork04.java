@@ -29,57 +29,59 @@ public class HomeWork04 {
      */
     public static void main(String[] args) {
 
-        System.out.println("Введите строку вида  text~num");
-        Scanner sc = new Scanner(System.in);
-        LinkedList list = new LinkedList<>();
-        String word = "";
-        while (!word.equals("quit")){
-            word = sc.next();
-            if(word.contains("~")){
-                String [] words = word.split("~");
-
-                if(isInteger(words[1])){
-                    int numb = Integer.parseInt(words[1]);
-                    if(words[0].equals("print")){
-                        Element(list, numb);
-                    } else if(numb >= list.size()){
-                        for (int i = list.size(); i <= numb; i++) {
-                            list.add("");
-                        }
-
-                        list.add(numb,words[0]);
-                    }else if (list.get(numb) != ""){
-                        System.out.println("Место заданного элемента занято");
-                    }else {
-
-                        list.add(numb,words[0]);
-                    }
-                }
-            }
 
 
-
-        }
-        System.out.println(list);
-
-
+        Task1();
 //             * 2. Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
 
         LinkedList<Integer> linkedList = new LinkedList<>();
-
-
-        linkedList.add(5);
-        linkedList.add(4);
-        linkedList.add(3);
-        linkedList.add(2);
-        linkedList.add(1);
-        linkedList.add(6);
-        linkedList.add(3);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Сколько всего элементов?");
+        int n = sc.nextInt();
+        int i = 0;
+        System.out.println("Добавите %s элементов в список");
+        while(i <n){
+            linkedList.add( sc.nextInt());
+            i++;
+        }
         System.out.println(linkedList);
         System.out.println(reverse(linkedList));
 
     }
+    public  static void Task1(){
+    System.out.println("Введите строку вида  text~num");
+    Scanner sc = new Scanner(System.in);
+    LinkedList list = new LinkedList<>();
+    String word = "";
+    while (!word.equals("quit")){
+        word = sc.next();
+        if(word.contains("~")){
+            String [] words = word.split("~");
 
+            if(isInteger(words[1])){
+                int numb = Integer.parseInt(words[1]);
+                if(words[0].equals("print")){
+                    Element(list, numb);
+                } else if(numb >= list.size()){
+                    for (int i = list.size(); i <= numb; i++) {
+                        list.add("");
+                    }
+
+                    list.add(numb,words[0]);
+                }else if (list.get(numb) != ""){
+                    System.out.println("Место заданного элемента занято");
+                }else {
+
+                    list.add(numb,words[0]);
+                }
+            }
+        }
+
+
+
+    }
+    System.out.println(list);
+}
     private static <T> LinkedList<T> reverse(LinkedList<T> source) {
 
         LinkedList<T> list1 = new LinkedList<>();
